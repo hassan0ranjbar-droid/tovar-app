@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "توار",
+    "slug": "tovar-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#128C7E"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#128C7E"
+      },
+      "package": "com.tovar.messenger",
+      "permissions": [
+        "android.permission.INTERNET",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.CAMERA"
+      ],
+      "usesCleartextTraffic": true
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "اجازه دسترسی به گالری برای ارسال تصویر"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "2dae1028-07ff-4469-9d50-d758b14810b7"
+      }
+    }
+  }
+}
