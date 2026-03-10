@@ -1,0 +1,74 @@
+════════════════════════════════════════════
+   راهنمای ساخت APK توار در Android Studio
+════════════════════════════════════════════
+
+پیش‌نیاز:
+  ✅ Android Studio (Hedgehog 2023.1.1 یا جدیدتر)
+  ✅ JDK 17 (معمولاً با Android Studio نصبه)
+  ✅ فضای خالی حداقل 2GB
+
+────────────────────────────────────────────
+مرحله ۱ — باز کردن پروژه
+────────────────────────────────────────────
+1. پوشه tovar-android رو از zip خارج کن
+2. Android Studio رو باز کن
+3. روی "Open" کلیک کن (نه New Project!)
+4. پوشه tovar-android رو انتخاب کن (همان پوشه‌ای که
+   settings.gradle.kts داخلشه)
+5. روی OK کلیک کن
+
+────────────────────────────────────────────
+مرحله ۲ — صبر برای Gradle Sync
+────────────────────────────────────────────
+بعد از باز شدن، Android Studio شروع میکنه به
+Sync کردن. این ممکنه 2-5 دقیقه طول بکشه.
+در پایین صفحه نوار پیشرفت نشون میده.
+
+اگه خطا داد:
+  ▶ File → Invalidate Caches → Invalidate and Restart
+  ▶ بعد از restart دوباره صبر کن sync تموم بشه
+
+────────────────────────────────────────────
+مرحله ۳ — Build APK
+────────────────────────────────────────────
+از منو:
+  Build → Build Bundle(s) / APK(s) → Build APK(s)
+
+صبر کن... وقتی تموم شد پایین صفحه نوشته:
+  "APK(s) generated successfully"
+  روی "locate" کلیک کن
+
+────────────────────────────────────────────
+مرحله ۴ — نصب APK
+────────────────────────────────────────────
+فایل APK اینجاست:
+  tovar-android/app/build/outputs/apk/debug/app-debug.apk
+
+روش نصب:
+  الف) فایل رو به گوشی انتقال بده و نصب کن
+  ب) با کابل USB و adb:
+      adb install app-debug.apk
+
+────────────────────────────────────────────
+خطاهای رایج و راه‌حل
+────────────────────────────────────────────
+
+❌ "Could not install Gradle distribution"
+   → اینترنت رو چک کن یا VPN بزن
+   → پوشه زیر رو پاک کن و Try Again:
+     C:\Users\[نام]\\.gradle\wrapper\dists\
+
+❌ "SDK location not found"
+   → File → Project Structure → SDK Location
+   → مسیر Android SDK رو وارد کن
+
+❌ "Minimum supported Gradle version is..."
+   → File → Project Structure → Project
+   → Gradle Version رو روی 8.4 بذار
+
+❌ "Package name already exists"
+   → این APK debug هست، نام ir.tovar.app.debug داره
+   → اگه release میخوای:
+     Build → Generate Signed Bundle/APK → APK
+
+════════════════════════════════════════════

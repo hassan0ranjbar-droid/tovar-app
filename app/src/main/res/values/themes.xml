@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Tovar" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">#128C7E</item>
+        <item name="android:colorPrimaryDark">#0D7065</item>
+        <item name="android:colorAccent">#25D366</item>
+        <item name="android:windowBackground">#128C7E</item>
+        <item name="android:statusBarColor">#0D7065</item>
+        <item name="android:navigationBarColor">#128C7E</item>
+    </style>
+</resources>
